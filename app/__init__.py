@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/api/v1/', methods=['GET'])
 def index():
     return {
-        'hello'
+        'hello': 'world',
     }
 
 
@@ -14,8 +14,18 @@ def index():
 @app.route('/api/v1/accounts/', methods=['GET'])
 def show_accounts():
     return {
-        'William Shakespeare',
-        'Linus',
+        'William Shakespeare': {
+            'occupation': [
+                'Playwright',
+                'Poet',
+                'Actor',
+            ]
+        },
+        'Linus Torvalds': {
+            'occupation': [
+                'Software engineer',
+            ]
+        },
     }
 
 
@@ -26,12 +36,12 @@ def show_quotes():
         'William Shakespeare': {
             'quote': [
                 'Love all,trust a few,do wrong to none',
-                'Some are born great, some achieve greatness, and some greatness thrust upon them.'
+                'Some are born great, some achieve greatness, and some greatness thrust upon them.',
             ]
         },
-        'Linus': {
+        'Linus Torvalds': {
             'quote': [
-                'Talk is cheap. Show me the code.'
+                'Talk is cheap. Show me the code.',
             ]
         },
     }
