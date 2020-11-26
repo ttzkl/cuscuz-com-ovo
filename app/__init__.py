@@ -47,3 +47,10 @@ def show_routes():
         'accounts': 'GET /api/v1/accounts',
     }
     return jsonify(output)
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return {
+        'error': e,
+    }, 404
