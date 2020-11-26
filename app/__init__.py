@@ -1,10 +1,21 @@
 from flask import Flask, jsonify
 app = Flask(__name__)
 
+
+@app.route('/', methods=['GET'])
+def home():
+    return {
+        'hello'
+    }
+
+
 @app.route('/api/v1/accounts', methods=['GET'])
 @app.route('/api/v1/accounts/', methods=['GET'])
-def index():
-    return 'hello'
+def show_accounts():
+    return {
+        'William Shakespeare',
+        'Linus',
+    }
 
 
 @app.route('/api/v1/quotes', methods=['GET'])
@@ -21,7 +32,7 @@ def show_quotes():
             'quote': [
                 'Talk is cheap. Show me the code.'
             ]
-        }
+        },
     }
 
 
