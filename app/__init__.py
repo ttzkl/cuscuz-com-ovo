@@ -52,6 +52,7 @@ def show_quotes():
 def show_routes():
     """List of routes for this API."""
     output = {
+        'index': 'GET /api/v1',
         'info': 'GET /api/v1/routes',
         'quotes': 'GET /api/v1/quotes',
         'accounts': 'GET /api/v1/accounts',
