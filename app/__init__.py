@@ -2,12 +2,13 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 
 @app.route('/api/v1/accounts', methods=['GET'])
+@app.route('/api/v1/accounts/', methods=['GET'])
 def index():
     return 'hello'
 
 
-
 @app.route('/api/v1/quotes', methods=['GET'])
+@app.route('/api/v1/quotes/', methods=['GET'])
 def show_quotes():
     return {
         'William Shakespeare': {
@@ -25,6 +26,7 @@ def show_quotes():
 
 
 @app.route('api/v1/routes', methods=['GET'])
+@app.route('api/v1/routes/', methods=['GET'])
 def show_routes():
     """List of routes for this API."""
     output = {
